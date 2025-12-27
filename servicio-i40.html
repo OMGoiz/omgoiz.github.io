@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title data-translate="serv_i40_title">Integración Industria 4.0</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f0f10;
+      --card:#121212;
+      --blue:#1fb2ff;
+      --muted:#9aa0a6;
+      --accent:#0fb0ff;
+      --glass: rgba(255,255,255,0.03);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background-image: url('bg-pattern.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: var(--bg);
+      color:#e6eef8;
+    }
+
+    a{color:inherit;text-decoration:none}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:var(--bg);position:sticky;top:0;z-index:40}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:64px;height:64px;object-fit:contain}
+    .brand h1{font-family:Orbitron,system-ui;font-size:20px;margin:0;color:var(--blue)}
+
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--blue),#00c0ff);padding:10px 14px;border-radius:10px;color:#051018;font-weight:700}
+
+    /* Banderas */
+    .lang-switch {display:flex;gap:10px;margin-left:25px;}
+    .flag {width:32px;height:32px;cursor:pointer;border-radius:4px;transition:transform .2s,opacity .2s;}
+    .flag:hover {transform:scale(1.08);opacity:.8;}
+
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    main{background:linear-gradient(180deg,rgba(15,15,16,0.95)0%,rgba(7,7,7,0.98)100%);min-height:100vh;padding-top:30px}
+
+    /* Contenido */
+    .service-detail{display:grid;grid-template-columns:2fr 1fr;gap:40px;padding-top:40px;padding-bottom:50px}
+    .service-detail .main-content h1{font-family:Orbitron;color:var(--blue);font-size:32px;margin-bottom:20px}
+    .service-detail .main-content h4{color:var(--blue);margin-top:25px;margin-bottom:10px}
+    .service-detail .main-content p{color:var(--muted);line-height:1.6}
+    .service-detail .main-content ul{color:var(--muted);line-height:1.6;padding-left:20px;margin-top:10px}
+
+    .sidebar{background:var(--card);padding:20px;border-radius:12px;height:fit-content}
+    .sidebar a{display:block;margin-top:10px;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .sidebar a:hover{color:var(--blue)}
+    .sidebar h4{color:var(--blue);margin-bottom:15px;border-bottom:2px solid var(--blue);padding-bottom:8px}
+
+    footer{margin-top:50px;padding:28px 0;text-align:center;color:var(--muted)}
+    .whatsapp{position:fixed;right:18px;bottom:18px;background:var(--blue);color:#041018;padding:12px 14px;border-radius:999px;font-weight:800}
+
+    @media(max-width:980px){.service-detail{grid-template-columns:1fr}header{padding:12px}.brand img{width:56px;height:56px}}
+  </style>
+</head>
+<body>
+
+<header class="container">
+  <div class="brand">
+    <img src="IPROGO.png" alt="IPROGO logo">
+    <a href="index.html"><h1>IPROGO</h1></a>
+  </div>
+
+  <nav>
+    <a href="index.html#servicios" data-translate="nav_servicios">Servicios</a>
+    <a href="index.html#proyectos" data-translate="nav_proyectos">Proyectos</a>
+    <a href="index.html#nosotros" data-translate="nav_nosotros">Nosotros</a>
+    <a href="index.html#contacto" class="cta" data-translate="nav_contacto">Contacto</a>
+
+    <div class="lang-switch">
+      <img src="mx.png" id="lang-es" class="flag" title="Español">
+      <img src="us.png" id="lang-en" class="flag" title="English">
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="service-detail">
+
+    <div class="main-content">
+      <h1 data-translate="serv_i40_title">Integración Industria 4.0</h1>
+
+      <p class="muted" style="font-size:1.1em" data-translate="i40_intro">
+        La Industria 4.0 integra tecnologías avanzadas como IIoT, Cloud Computing y Edge para conectar equipos industriales, mejorar la visibilidad operativa y habilitar decisiones basadas en datos en tiempo real.
+      </p>
+
+      <h4 data-translate="i40_pilares_titulo">Nuestros pilares de integración</h4>
+      <ul>
+        <li data-translate="i40_pilar_1">Conectividad de activos industriales mediante protocolos PLC (Profinet, Modbus, Ethernet/IP, OPC-UA).</li>
+        <li data-translate="i40_pilar_2">Monitorización y dashboards industriales locales o en la nube.</li>
+        <li data-translate="i40_pilar_3">Análisis de datos y mantenimiento predictivo.</li>
+        <li data-translate="i40_pilar_4">Integración vertical con bases de datos, MES o ERP.</li>
+      </ul>
+
+      <h4 data-translate="i40_beneficios_titulo">¿Por qué dar el salto con IPROGO?</h4>
+      <p data-translate="i40_beneficios_texto">
+        Implementamos soluciones escalables, iniciando con pilotos de bajo riesgo que permiten medir el retorno de inversión antes de expandir la digitalización en planta.
+      </p>
+
+      <a class="btn primary" href="index.html#contacto" style="margin-top:20px" data-translate="i40_btn">Iniciar transformación digital</a>
+    </div>
+
+    <aside class="sidebar">
+      <h4 data-translate="otros_servicios">Otros Servicios</h4>
+      <a href="servicio-analisis.html" data-translate="serv_analisis_title">Análisis de mejora de productividad</a>
+      <a href="servicio-mantenimiento.html" data-translate="serv_mantenimiento_title">Mantenimiento y soporte</a>
+      <a href="servicio-plc.html" data-translate="serv_robot_title">PLC's, Robots, Bases de Datos y Más!</a>
+
+      <h4 style="margin-top:25px" data-translate="contacto_directo">Contacto Directo</h4>
+      <p class="muted" style="font-size:14px" data-translate="i40_contacto_directo_texto">¿Listo para conectar tu planta?</p>
+
+      <a class="btn primary" href="https://wa.me/524426687642" target="_blank" style="display:block;text-align:center" data-translate="contacto_wp_btn">Escríbenos por WhatsApp</a>
+    </aside>
+
+  </section>
+
+  <footer>
+    <div class="muted" data-translate="footer_text">© IPROGO — Integración Industrial · PLC · HMI · SCADA</div>
+  </footer>
+</main>
+
+<a href="https://wa.me/524426687642" target="_blank" class="whatsapp">WhatsApp</a>
+
+<script src="lang.js"></script>
+</body>
+</html>
