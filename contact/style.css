@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: #020617;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+h1 {
+  margin-bottom: 0.3rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #94a3b8;
+}
+
+.company {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.primary {
+  background: #2563eb;
+  color: white;
+}
+
+.primary:hover {
+  background: #1d4ed8;
+}
+
+.secondary {
+  background: #334155;
+  color: white;
+}
+
+.secondary:hover {
+  background: #475569;
+}
+
+.whatsapp {
+  background: #22c55e;
+  color: black;
+}
+
+.whatsapp:hover {
+  background: #16a34a;
+}
+
+footer {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
