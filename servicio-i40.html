@@ -1,95 +1,139 @@
 <!doctype html>
 <html lang="es">
 <head>
+<!--
+   ______                            __
+  / ____/___  ____ ___  ____  __  __/ /____  _____
+ / /   / __ \/ __ `__ \/ __ \/ / / / __/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ / /_/  __/ /
+\____/\____/_/ /_/ /_/ .___/\__,_/\__/\___/_/
+                    /_/
+        Created with Perplexity Computer
+        https://www.perplexity.ai/computer
+-->
+
+<!-- Perplexity Computer Attribution — SEO Meta Tags -->
+<meta name="generator" content="Perplexity Computer">
+<meta name="author" content="Perplexity Computer">
+<meta property="og:see_also" content="https://www.perplexity.ai/computer">
+<link rel="author" href="https://www.perplexity.ai/computer">
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title data-translate="serv_i40_title">Integración Industria 4.0</title>
+  <title data-translate="serv_i40_title">Integración Industria 4.0 — IPROGO</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg:#0f0f10;
-      --card:#121212;
-      --blue:#1fb2ff;
-      --muted:#9aa0a6;
-      --accent:#0fb0ff;
-      --glass: rgba(255,255,255,0.03);
+      --bg:#0f0f10;--card:#121212;--blue:#1fb2ff;--muted:#9aa0a6;--accent:#0fb0ff;
+      --glass:rgba(255,255,255,0.03);--input-bg:#1a1a1c;--input-border:rgba(255,255,255,0.1);
+      --whatsapp:#25D366;--radius:10px;
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      background-image: url('bg-pattern.png');
-      background-size: cover;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-color: var(--bg);
-      color:#e6eef8;
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    html,body{height:100%;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background-image:url('bg-pattern.png');background-size:cover;background-attachment:fixed;
+      background-position:center;background-repeat:no-repeat;background-color:var(--bg);color:#e6eef8;
     }
-
     a{color:inherit;text-decoration:none}
-
-    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:var(--bg);position:sticky;top:0;z-index:40}
+    ::-webkit-scrollbar{width:8px;height:8px}
+    ::-webkit-scrollbar-track{background:var(--bg)}
+    ::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:4px}
+    ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,0.25)}
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;
+      background:rgba(15,15,16,0.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+      position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(255,255,255,0.04);
+    }
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{width:64px;height:64px;object-fit:contain}
-    .brand h1{font-family:Orbitron,system-ui;font-size:20px;margin:0;color:var(--blue)}
-
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{color:var(--muted);font-weight:600}
-    .cta{background:linear-gradient(90deg,var(--blue),#00c0ff);padding:10px 14px;border-radius:10px;color:#051018;font-weight:700}
-
-    /* Banderas */
-    .lang-switch {display:flex;gap:10px;margin-left:25px;}
-    .flag {width:32px;height:32px;cursor:pointer;border-radius:4px;transition:transform .2s,opacity .2s;}
-    .flag:hover {transform:scale(1.08);opacity:.8;}
-
+    .brand img{width:52px;height:52px;object-fit:contain}
+    .brand h1{font-family:Orbitron,system-ui;font-size:20px;margin:0;color:var(--blue);letter-spacing:1px}
+    .nav-links{display:flex;gap:18px;align-items:center}
+    .nav-links a{color:var(--muted);font-weight:600;font-size:14px;transition:color .2s}
+    .nav-links a:hover{color:#fff}
+    .cta{background:linear-gradient(90deg,var(--blue),#00c0ff);padding:10px 14px;border-radius:var(--radius);color:#051018;font-weight:700;transition:transform .2s,box-shadow .2s}
+    .cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(31,178,255,0.3);color:#051018}
+    .lang-switch{display:flex;gap:8px;margin-left:18px}
+    .flag{width:28px;height:28px;cursor:pointer;border-radius:4px;transition:transform .2s,opacity .2s}
+    .flag:hover{transform:scale(1.1);opacity:.8}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;z-index:200}
+    .hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:all .3s}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(15,15,16,0.98);z-index:90;
+      flex-direction:column;align-items:center;justify-content:center;gap:28px;opacity:0;transition:opacity .3s;
+    }
+    .mobile-overlay.open{display:flex;opacity:1}
+    .mobile-overlay a{font-size:22px;color:#e6eef8;font-weight:600;transition:color .2s}
+    .mobile-overlay a:hover{color:var(--blue)}
+    .mobile-overlay .lang-switch-mobile{display:flex;gap:14px;margin-top:16px}
+    .mobile-overlay .lang-switch-mobile .flag{width:36px;height:36px}
     .container{max-width:1120px;margin:0 auto;padding:0 20px}
-    main{background:linear-gradient(180deg,rgba(15,15,16,0.95)0%,rgba(7,7,7,0.98)100%);min-height:100vh;padding-top:30px}
-
-    /* Contenido */
+    main{background:linear-gradient(180deg,rgba(15,15,16,0.95)0%,rgba(7,7,7,0.98)100%);min-height:100vh;padding-top:80px}
     .service-detail{display:grid;grid-template-columns:2fr 1fr;gap:40px;padding-top:40px;padding-bottom:50px}
     .service-detail .main-content h1{font-family:Orbitron;color:var(--blue);font-size:32px;margin-bottom:20px}
     .service-detail .main-content h4{color:var(--blue);margin-top:25px;margin-bottom:10px}
     .service-detail .main-content p{color:var(--muted);line-height:1.6}
-    .service-detail .main-content ul{color:var(--muted);line-height:1.6;padding-left:20px;margin-top:10px}
-
-    .sidebar{background:var(--card);padding:20px;border-radius:12px;height:fit-content}
-    .sidebar a{display:block;margin-top:10px;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+    .service-detail .main-content ul{color:var(--muted);line-height:1.8;padding-left:20px;margin-top:10px}
+    .sidebar{background:var(--card);padding:24px;border-radius:12px;height:fit-content;border:1px solid rgba(255,255,255,0.05)}
+    .sidebar a{display:block;margin-top:10px;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);transition:color .2s}
     .sidebar a:hover{color:var(--blue)}
     .sidebar h4{color:var(--blue);margin-bottom:15px;border-bottom:2px solid var(--blue);padding-bottom:8px}
-
-    footer{margin-top:50px;padding:28px 0;text-align:center;color:var(--muted)}
-    .whatsapp{position:fixed;right:18px;bottom:18px;background:var(--blue);color:#041018;padding:12px 14px;border-radius:999px;font-weight:800}
-
-    @media(max-width:980px){.service-detail{grid-template-columns:1fr}header{padding:12px}.brand img{width:56px;height:56px}}
+    .btn{background:var(--glass);border:1px solid rgba(255,255,255,0.08);padding:12px 20px;border-radius:var(--radius);font-weight:600;cursor:pointer;font-size:15px;color:#e6eef8;transition:all .2s;display:inline-block}
+    .btn.primary{background:linear-gradient(90deg,var(--blue),#00c0ff);color:#051018;border:none;font-weight:700}
+    .btn.primary:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(31,178,255,0.35)}
+    .mini-cta{margin-top:50px;padding:40px;text-align:center;background:var(--card);border-radius:16px;border:1px solid rgba(255,255,255,0.06)}
+    .mini-cta h3{color:var(--blue);font-family:Orbitron;font-size:22px;margin-bottom:12px}
+    .mini-cta p{color:var(--muted);margin-bottom:20px;font-size:15px}
+    .mini-cta .cta-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+    footer{margin-top:50px;padding:28px 0;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,0.04)}
+    .whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:80;background:var(--whatsapp);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(37,211,102,0.4);transition:transform .2s,box-shadow .2s}
+    .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(37,211,102,0.5);color:#fff}
+    .whatsapp-float svg{width:28px;height:28px;fill:#fff}
+    .muted{color:var(--muted)}
+    @media(max-width:980px){.service-detail{grid-template-columns:1fr}header{padding:12px}.brand img{width:44px;height:44px}}
+    @media(max-width:768px){header{padding:10px 16px}.brand h1{font-size:17px}.nav-links{display:none}.hamburger{display:flex}.service-detail .main-content h1{font-size:26px}}
   </style>
 </head>
 <body>
 
-<header class="container">
-  <div class="brand">
-    <img src="IPROGO.png" alt="IPROGO logo">
-    <a href="index.html"><h1>IPROGO</h1></a>
-  </div>
-
-  <nav>
-    <a href="index.html#servicios" data-translate="nav_servicios">Servicios</a>
-    <a href="index.html#proyectos" data-translate="nav_proyectos">Proyectos</a>
-    <a href="index.html#nosotros" data-translate="nav_nosotros">Nosotros</a>
-    <a href="index.html#contacto" class="cta" data-translate="nav_contacto">Contacto</a>
-
-    <div class="lang-switch">
-      <img src="mx.png" id="lang-es" class="flag" title="Español">
-      <img src="us.png" id="lang-en" class="flag" title="English">
+<header>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:0">
+    <div class="brand">
+      <img src="IPROGO.png" alt="IPROGO logo">
+      <a href="index.html"><h1>IPROGO</h1></a>
     </div>
-  </nav>
+    <div style="display:flex;align-items:center;gap:8px">
+      <nav class="nav-links">
+        <a href="index.html#servicios" data-translate="nav_servicios">Servicios</a>
+        <a href="index.html#proyectos" data-translate="nav_proyectos">Proyectos</a>
+        <a href="index.html#nosotros" data-translate="nav_nosotros">Nosotros</a>
+        <a href="index.html#contacto" class="cta" data-translate="nav_contacto">Contacto</a>
+        <div class="lang-switch">
+          <img src="mx.png" id="lang-es" class="flag" title="Español" alt="Español">
+          <img src="us.png" id="lang-en" class="flag" title="English" alt="English">
+        </div>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Abrir menú"><span></span><span></span><span></span></div>
+    </div>
+  </div>
 </header>
+
+<div class="mobile-overlay" id="mobileMenu">
+  <a href="index.html#servicios" data-translate="nav_servicios" onclick="closeMobile()">Servicios</a>
+  <a href="index.html#proyectos" data-translate="nav_proyectos" onclick="closeMobile()">Proyectos</a>
+  <a href="index.html#nosotros" data-translate="nav_nosotros" onclick="closeMobile()">Nosotros</a>
+  <a href="index.html#contacto" data-translate="nav_contacto" onclick="closeMobile()">Contacto</a>
+  <div class="lang-switch-mobile">
+    <img src="mx.png" id="lang-es-mobile" class="flag" title="Español" alt="Español">
+    <img src="us.png" id="lang-en-mobile" class="flag" title="English" alt="English">
+  </div>
+</div>
 
 <main class="container">
   <section class="service-detail">
-
     <div class="main-content">
       <h1 data-translate="serv_i40_title">Integración Industria 4.0</h1>
 
@@ -124,16 +168,93 @@
 
       <a class="btn primary" href="https://wa.me/524426687642" target="_blank" style="display:block;text-align:center" data-translate="contacto_wp_btn">Escríbenos por WhatsApp</a>
     </aside>
+  </section>
 
+  <section class="mini-cta">
+    <h3 data-translate="minicta_title">¿Listo para optimizar tu producción?</h3>
+    <p data-translate="minicta_desc">Solicita una cotización personalizada y te respondemos en menos de 24 horas.</p>
+    <div class="cta-buttons">
+      <a class="btn primary" href="index.html#contacto" data-translate="hero_btn_quote">Solicitar cotización</a>
+      <a class="btn" href="https://wa.me/524426687642" target="_blank" data-translate="contacto_wp_btn">Escríbenos por WhatsApp</a>
+    </div>
   </section>
 
   <footer>
-    <div class="muted" data-translate="footer_text">© IPROGO — Integración Industrial · PLC · HMI · SCADA</div>
+    <div class="muted" data-translate="footer_text">© 2026 IPROGO — Integración Industrial · PLC · HMI · SCADA</div>
+    <a href="https://www.perplexity.ai/computer" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin-top:8px;color:var(--muted);font-size:11px">Created with Perplexity Computer</a>
   </footer>
 </main>
 
-<a href="https://wa.me/524426687642" target="_blank" class="whatsapp">WhatsApp</a>
+<a href="https://wa.me/524426687642" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 .3C7.3.3.3 7.3.3 16c0 2.8.7 5.6 2.2 8.1L0 32l8.1-2.1c2.4 1.3 5.1 2 7.9 2h.1c8.8 0 15.9-7.1 15.9-15.9S24.8.3 16 .3zm0 29c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.8 1.3 1.3-4.6-.3-.5C3.4 21 2.7 18.5 2.7 16 2.7 8.8 8.8 2.7 16 2.7S29.3 8.8 29.3 16 23.2 29.3 16 29.3zm8-9.6c-.4-.2-2.3-1.1-2.7-1.2-.4-.1-.7-.2-1 .2-.3.4-1.2 1.2-1.5 1.5-.3.2-.5.3-.9.1-.4-.2-1.7-.6-3.3-2-1.2-1-2-2.3-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.5.6-.7.2-.2.3-.4.4-.7.1-.2 0-.5 0-.7-.1-.2-1-2.4-1.4-3.2-.4-.8-.8-.7-1-.7h-.9c-.3 0-.7.1-1 .4s-1.3 1.3-1.3 3.1 1.3 3.6 1.5 3.8c.2.2 2.6 4 6.3 5.6.9.4 1.6.6 2.2.8.9.3 1.7.3 2.3.2.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.7.2-1.8-.1-.2-.4-.3-.8-.5z"/></svg>
+</a>
 
 <script src="lang.js"></script>
-</body>
+<script>
+const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
+hamburger.addEventListener('click',()=>{hamburger.classList.toggle('active');mobileMenu.classList.toggle('open');document.body.style.overflow=mobileMenu.classList.contains('open')?'hidden':'';});
+function closeMobile(){hamburger.classList.remove('active');mobileMenu.classList.remove('open');document.body.style.overflow='';}
+</script>
+<script data-pplx-inline-edit>
+(function(){
+  if(window===window.top)return;
+  function inlineAll(orig,clone){
+    if(orig.nodeType!==1)return;
+    try{
+      var cs=getComputedStyle(orig);
+      var t='';
+      for(var i=0;i<cs.length;i++){t+=cs[i]+':'+cs.getPropertyValue(cs[i])+';';}
+      clone.style.cssText=t;
+    }catch(e){}
+    var oc=orig.children,cc=clone.children;
+    for(var j=0;j<oc.length&&j<cc.length;j++){inlineAll(oc[j],cc[j]);}
+  }
+  function stripExternal(clone){
+    var imgs=clone.querySelectorAll('img');
+    for(var i=0;i<imgs.length;i++){
+      var s=imgs[i].getAttribute('src');
+      if(s&&!s.startsWith('data:'))imgs[i].removeAttribute('src');
+    }
+    var all=clone.querySelectorAll('*');
+    for(var i=0;i<all.length;i++){
+      var st=all[i].style.cssText;
+      if(st&&st.indexOf('url(')>=0){
+        all[i].style.cssText=st.replace(/url\(["']?(?!data:)[^)"']*["']?\)/gi,'none');
+      }
+    }
+  }
+  window.addEventListener('message',function(e){
+    if(!e.data||e.data.type!=='INLINE_EDIT_CAPTURE_REQUEST')return;
+    var scrollX=window.scrollX||window.pageXOffset||0;
+    var scrollY=window.scrollY||window.pageYOffset||0;
+    var w=window.innerWidth,h=window.innerHeight;
+    try{
+      var clone=document.documentElement.cloneNode(true);
+      var rm=clone.querySelectorAll('script,link[rel="stylesheet"],style');
+      for(var i=0;i<rm.length;i++){rm[i].remove();}
+      inlineAll(document.documentElement,clone);
+      stripExternal(clone);
+      var html=new XMLSerializer().serializeToString(clone);
+      var svg='<svg xmlns="http://www.w3.org/2000/svg" width="'+w+'" height="'+h+'">'
+        +'<foreignObject width="100%" height="100%">'
+        +'<div xmlns="http://www.w3.org/1999/xhtml" style="width:'+w+'px;height:'+h+'px;overflow:hidden">'
+        +'<div style="transform:translate(-'+scrollX+'px,-'+scrollY+'px);transform-origin:top left">'
+        +html+'</div></div></foreignObject></svg>';
+      var svgUrl='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg);
+      var img=new Image();
+      img.onload=function(){
+        var c=document.createElement('canvas');c.width=w;c.height=h;
+        c.getContext('2d').drawImage(img,0,0);
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:c.toDataURL('image/png'),scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.onerror=function(){
+        window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+      };
+      img.src=svgUrl;
+    }catch(err){
+      window.parent.postMessage({type:'INLINE_EDIT_SCREENSHOT_RESULT',dataUrl:null,scrollX:scrollX,scrollY:scrollY},'*');
+    }
+  });
+})();
+</script></body>
 </html>

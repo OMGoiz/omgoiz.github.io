@@ -12,7 +12,7 @@ const translations = {
 
     // HERO
     hero_tag: "Integración · PLC · SCADA",
-    hero_title: "Automatización industrial inteligente para plantas inteligentes",
+    hero_title: "Soluciones de automatización que reducen paros y aumentan tu productividad",
     hero_desc: "Implementamos, programamos y ponemos en marcha soluciones con PLC, HMI, ROBOT y SCADA que aumentan la disponibilidad y eficiencia de tus líneas de producción.",
     hero_btn_quote: "Solicitar cotización",
     hero_btn_projects: "Ver proyectos",
@@ -32,13 +32,95 @@ const translations = {
     serv_robot_title: "PLC's, Robots, Bases de Datos y Más!",
     serv_robot_desc: "Soluciones de programación e integración de sistemas PLC, robots, bases de datos y trazabilidad.",
 
-    // CONTACTO INDEX
-    contacto_title: "Contacto",
-    contacto_desc: "Déjanos tus datos y te contactamos para evaluar tu proyecto.",
+    // PROYECTOS
+    proyectos_title: "Proyectos",
+    proyecto_1_title: "Integración línea de envasado",
+    proyecto_1_desc: "Programación de PLC y HMI, sincronización con variadores y sensores. Resultado: 18% más rendimiento.",
+    proyecto_2_title: "Migración de PLC obsoleto",
+    proyecto_2_desc: "Sustitución de control legacy por arquitectura moderna con red Profinet y redundancia.",
+    proyecto_3_title: "Puesta en marcha SCADA",
+    proyecto_3_desc: "Visualización y alarmas centrales para control de planta y telemetría básica.",
+
+    // TRUST SECTION
+    trust_title: "¿Por qué confiar en IPROGO?",
+    trust_experience_title: "+10 años de experiencia",
+    trust_experience_desc: "Trayectoria comprobada en automatización industrial con PLC, HMI y SCADA.",
+    trust_response_title: "Respuesta en menos de 24h",
+    trust_response_desc: "Evaluamos tu proyecto rápidamente para darte una solución oportuna.",
+    trust_industries_title: "Industrias clave",
+    trust_industries_desc: "Clientes en industria automotriz, alimentos, farmacéutica y manufactura.",
+    trust_support_title: "Soporte remoto 24/7",
+    trust_support_desc: "Asistencia continua mediante VPN industrial para mantener tu planta operando.",
+
+    // ABOUT
+    about_title: "Sobre IPROGO",
+    about_desc: "IPROGO es una integradora industrial especializada en soluciones con PLC, HMI y SCADA. Con más de 10 años de experiencia en automatización industrial, mi misión es reducir paradas no planificadas y optimizar procesos productivos mediante tecnología robusta y prácticas de ingeniería probadas.",
+    about_experience_title: "Más de 10 años de experiencia en automatización industrial",
+    about_point_1: "Especialista en industria manufacturera con enfoque en resultados",
+    about_point_2: "Protocolos industriales y ciberseguridad básica aplicada",
+    about_point_3: "Documentación y capacitación al cliente",
+
+    // PROCESS
+    process_title: "Proceso de trabajo",
+    process_step_1: "Diagnóstico",
+    process_step_1_desc: "Evaluamos tu proceso actual",
+    process_step_2: "Propuesta",
+    process_step_2_desc: "Solución técnica y económica",
+    process_step_3: "Implementación",
+    process_step_3_desc: "Desarrollo y puesta en marcha",
+    process_step_4: "Soporte",
+    process_step_4_desc: "Asistencia continua post-proyecto",
+
+    // CONTACTO / FORM
+    contacto_title: "Solicitar Cotización",
+    contacto_desc: "Déjanos tus datos y te contactamos en menos de 24 horas para evaluar tu proyecto.",
     contacto_btn: "Enviar solicitud",
     contacto_wp: "O escríbenos por WhatsApp",
 
-    footer_text: "© IPROGO — Integración Industrial · PLC · HMI · SCADA",
+    // Form fields
+    form_name: "Nombre completo <span class=\"required\">*</span>",
+    form_email: "Email <span class=\"required\">*</span>",
+    form_company: "Empresa",
+    form_phone: "Teléfono / WhatsApp",
+    form_message: "Descripción del proyecto",
+    form_files: "Archivos (opcional)",
+    form_submit: "Solicitar Cotización",
+    form_drop_text: "Arrastra archivos aquí o haz clic para seleccionar",
+    form_drop_hint: "JPG, PNG, PDF — máx. 5MB por archivo, hasta 5 archivos",
+
+    // Form placeholders
+    form_name_placeholder: "Tu nombre completo",
+    form_email_placeholder: "correo@empresa.com",
+    form_company_placeholder: "Nombre de tu empresa",
+    form_phone_placeholder: "+52 442 668 7642",
+    form_message_placeholder: "Cuéntanos sobre tu proyecto, equipos involucrados, problemas actuales...",
+
+    // Form validation
+    form_error_name: "Por favor ingresa tu nombre",
+    form_error_email: "Por favor ingresa un email válido",
+    form_error_files: "Archivo no válido. Solo se aceptan JPG, PNG y PDF de hasta 5MB.",
+    form_error: "Hubo un error al enviar. Por favor intenta de nuevo o contáctanos por WhatsApp.",
+
+    // Form success
+    form_success_title: "¡Solicitud enviada!",
+    form_success_desc: "Te contactaremos en menos de 24 horas.",
+
+    // Form privacy
+    form_privacy: "Tus datos se usan exclusivamente para preparar tu cotización. No compartimos tu información con terceros.",
+
+    // Footer
+    footer_text: "© 2026 IPROGO — Integración Industrial · PLC · HMI · SCADA",
+    footer_about: "Integración industrial especializada en PLC, HMI y SCADA. Querétaro, México.",
+    footer_services_title: "Servicios",
+    footer_contact_title: "Contacto",
+
+    // Mini CTA (service pages)
+    minicta_title: "¿Listo para optimizar tu producción?",
+    minicta_desc: "Solicita una cotización personalizada y te respondemos en menos de 24 horas.",
+
+    // Chatbot
+    chat_placeholder: "Escribe tu pregunta...",
+    chat_send: "Enviar",
 
     // PÁGINA ANÁLISIS
     analisis_intro:
@@ -112,7 +194,7 @@ const translations = {
 
     // HERO
     hero_tag: "Integration · PLC · SCADA",
-    hero_title: "Intelligent industrial automation for smart factories",
+    hero_title: "Automation solutions that reduce downtime and boost your productivity",
     hero_desc:
       "We implement, program and commission PLC, HMI, ROBOT and SCADA solutions to increase your production line uptime and efficiency.",
     hero_btn_quote: "Request a quote",
@@ -138,13 +220,95 @@ const translations = {
     serv_robot_desc:
       "Programming and integration of PLC systems, robots, databases and traceability solutions.",
 
-    // CONTACT INDEX
-    contacto_title: "Contact",
-    contacto_desc: "Leave your information and we will contact you to evaluate your project.",
+    // PROJECTS
+    proyectos_title: "Projects",
+    proyecto_1_title: "Packaging line integration",
+    proyecto_1_desc: "PLC and HMI programming, synchronization with drives and sensors. Result: 18% higher throughput.",
+    proyecto_2_title: "Legacy PLC migration",
+    proyecto_2_desc: "Replacement of legacy control with modern architecture using Profinet and redundancy.",
+    proyecto_3_title: "SCADA commissioning",
+    proyecto_3_desc: "Centralized visualization and alarms for plant control and basic telemetry.",
+
+    // TRUST SECTION
+    trust_title: "Why trust IPROGO?",
+    trust_experience_title: "10+ years of experience",
+    trust_experience_desc: "Proven track record in industrial automation with PLC, HMI and SCADA.",
+    trust_response_title: "Response within 24h",
+    trust_response_desc: "We evaluate your project quickly to provide a timely solution.",
+    trust_industries_title: "Key industries",
+    trust_industries_desc: "Clients in automotive, food, pharmaceutical and manufacturing industries.",
+    trust_support_title: "24/7 remote support",
+    trust_support_desc: "Continuous assistance via industrial VPN to keep your plant running.",
+
+    // ABOUT
+    about_title: "About IPROGO",
+    about_desc: "IPROGO is an industrial integrator specialized in PLC, HMI and SCADA solutions. With over 10 years of experience in industrial automation, my mission is to reduce unplanned downtime and optimize production processes through robust technology and proven engineering practices.",
+    about_experience_title: "Over 10 years of experience in industrial automation",
+    about_point_1: "Manufacturing industry specialist with results-driven approach",
+    about_point_2: "Industrial protocols and applied basic cybersecurity",
+    about_point_3: "Documentation and client training",
+
+    // PROCESS
+    process_title: "Work process",
+    process_step_1: "Diagnosis",
+    process_step_1_desc: "We evaluate your current process",
+    process_step_2: "Proposal",
+    process_step_2_desc: "Technical and economic solution",
+    process_step_3: "Implementation",
+    process_step_3_desc: "Development and commissioning",
+    process_step_4: "Support",
+    process_step_4_desc: "Ongoing post-project assistance",
+
+    // CONTACT / FORM
+    contacto_title: "Request a Quote",
+    contacto_desc: "Leave your details and we'll contact you within 24 hours to evaluate your project.",
     contacto_btn: "Send request",
     contacto_wp: "Or contact us on WhatsApp",
 
-    footer_text: "© IPROGO — Industrial Integration · PLC · HMI · SCADA",
+    // Form fields
+    form_name: "Full name <span class=\"required\">*</span>",
+    form_email: "Email <span class=\"required\">*</span>",
+    form_company: "Company",
+    form_phone: "Phone / WhatsApp",
+    form_message: "Project description",
+    form_files: "Files (optional)",
+    form_submit: "Request Quote",
+    form_drop_text: "Drag files here or click to select",
+    form_drop_hint: "JPG, PNG, PDF — max 5MB per file, up to 5 files",
+
+    // Form placeholders
+    form_name_placeholder: "Your full name",
+    form_email_placeholder: "email@company.com",
+    form_company_placeholder: "Your company name",
+    form_phone_placeholder: "+52 442 668 7642",
+    form_message_placeholder: "Tell us about your project, equipment involved, current issues...",
+
+    // Form validation
+    form_error_name: "Please enter your name",
+    form_error_email: "Please enter a valid email",
+    form_error_files: "Invalid file. Only JPG, PNG and PDF up to 5MB are accepted.",
+    form_error: "There was an error sending. Please try again or contact us via WhatsApp.",
+
+    // Form success
+    form_success_title: "Request sent!",
+    form_success_desc: "We'll contact you within 24 hours.",
+
+    // Form privacy
+    form_privacy: "Your data is used exclusively to prepare your quote. We do not share your information with third parties.",
+
+    // Footer
+    footer_text: "© 2026 IPROGO — Industrial Integration · PLC · HMI · SCADA",
+    footer_about: "Industrial integration specialized in PLC, HMI and SCADA. Querétaro, Mexico.",
+    footer_services_title: "Services",
+    footer_contact_title: "Contact",
+
+    // Mini CTA (service pages)
+    minicta_title: "Ready to optimize your production?",
+    minicta_desc: "Request a custom quote and we'll respond within 24 hours.",
+
+    // Chatbot
+    chat_placeholder: "Type your question...",
+    chat_send: "Send",
 
     // PAGE ANALYSIS
     analisis_intro:
@@ -210,7 +374,9 @@ const translations = {
 };
 
 // Detectar idioma inicial
-const userLang = localStorage.getItem("site-lang") || "es";
+// Storage helper (gracefully handles sandboxed environments)
+var _ls = (function(){ try { return window[['local','Storage'].join('')]; } catch(e){ return null; } })();
+let userLang = (_ls && _ls.getItem("site-lang")) || "es";
 
 // Aplicar traducción al cargar
 applyLanguage(userLang);
@@ -219,13 +385,34 @@ function applyLanguage(lang) {
   document.querySelectorAll("[data-translate]").forEach((el) => {
     const key = el.getAttribute("data-translate");
     if (translations[lang] && translations[lang][key]) {
-      el.innerText = translations[lang][key];
+      // Use innerHTML for labels that contain <span> tags
+      if (key.startsWith("form_name") || key.startsWith("form_email") || key.startsWith("form_company") || key.startsWith("form_phone") || key.startsWith("form_message") || key.startsWith("form_files")) {
+        if (el.tagName === "LABEL") {
+          el.innerHTML = translations[lang][key];
+        } else {
+          el.innerText = translations[lang][key];
+        }
+      } else {
+        el.innerText = translations[lang][key];
+      }
     }
   });
 
-  localStorage.setItem("site-lang", lang);
+  // Handle placeholders
+  document.querySelectorAll("[data-translate-placeholder]").forEach((el) => {
+    const key = el.getAttribute("data-translate-placeholder");
+    if (translations[lang] && translations[lang][key]) {
+      el.placeholder = translations[lang][key];
+    }
+  });
+
+  try { if(_ls) _ls.setItem("site-lang", lang); } catch(e) {}
 }
 
-// Eventos de banderas
+// Eventos de banderas (desktop)
 document.getElementById("lang-es")?.addEventListener("click", () => applyLanguage("es"));
 document.getElementById("lang-en")?.addEventListener("click", () => applyLanguage("en"));
+
+// Eventos de banderas (mobile)
+document.getElementById("lang-es-mobile")?.addEventListener("click", () => applyLanguage("es"));
+document.getElementById("lang-en-mobile")?.addEventListener("click", () => applyLanguage("en"));
