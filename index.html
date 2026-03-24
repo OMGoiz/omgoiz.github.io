@@ -1146,32 +1146,6 @@ function getMockResponse(text) {
 }
 
 
-  // ===== REAL AI API CONNECTION (uncomment to enable) =====
-  // Replace the getMockResponse call with this function:
-  //
-  // async function getAIResponse(text) {
-  //   try {
-  //     const response = await fetch('YOUR_AI_ENDPOINT', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Authorization': 'Bearer YOUR_API_KEY'
-  //       },
-  //       body: JSON.stringify({
-  //         model: 'sonar',
-  //         messages: [
-  //           { role: 'system', content: 'Eres el asistente virtual de IPROGO, una empresa de automatización industrial en Querétaro, México. Responde preguntas sobre servicios de PLC, HMI, SCADA, robots industriales, Industria 4.0 y mantenimiento. Sé conciso y profesional.' },
-  //           { role: 'user', content: text }
-  //         ]
-  //       })
-  //     });
-  //     const data = await response.json();
-  //     return data.choices[0].message.content;
-  //   } catch (err) {
-  //     return getMockResponse(text); // Fallback to mock
-  //   }
-  // }
-
 })();
 </script>
 <script data-pplx-inline-edit>
