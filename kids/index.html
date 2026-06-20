@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje para los niños</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 16px;
+      padding: 28px 24px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .matrix-preview {
+      background: #000;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60px;
+      border: 1px solid #222;
+    }
+
+    .matrix-preview span {
+      font-family: monospace;
+      font-size: 13px;
+      color: #22cc44;
+      letter-spacing: 2px;
+      word-break: break-all;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+
+    p.sub {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-quick {
+      background: #222;
+      border: 1px solid #333;
+      color: #ccc;
+      border-radius: 8px;
+      padding: 8px 12px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn-quick:hover { background: #2a2a2a; }
+
+    textarea {
+      width: 100%;
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 15px;
+      padding: 12px;
+      resize: none;
+      height: 80px;
+      outline: none;
+      margin-bottom: 12px;
+      font-family: inherit;
+    }
+
+    textarea:focus { border-color: #444; }
+
+    .char-count {
+      font-size: 12px;
+      color: #444;
+      text-align: right;
+      margin-bottom: 12px;
+      margin-top: -8px;
+    }
+
+    .btn-send {
+      width: 100%;
+      background: #22cc44;
+      color: #000;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    .btn-send:hover { background: #1db83c; }
+    .btn-send:active { transform: scale(0.98); }
+    .btn-send:disabled { background: #333; color: #555; cursor: not-allowed; }
+
+    .status {
+      margin-top: 14px;
+      font-size: 13px;
+      text-align: center;
+      min-height: 20px;
+      color: #555;
+    }
+
+    .status.ok { color: #22cc44; }
+    .status.err { color: #e74c3c; }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #222;
+      margin: 20px 0;
+    }
+
+    .ultimo {
+      font-size: 12px;
+      color: #444;
+    }
+
+    .ultimo span {
+      color: #22cc44;
+      font-weight: 500;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #333;
+      margin-right: 6px;
+      vertical-align: middle;
+      transition: background 0.3s;
+    }
+
+    .dot.active { background: #22cc44; }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="matrix-preview">
+    <span id="preview">· · · · · · · ·</span>
+  </div>
+
+  <h2><span class="dot" id="dot"></span>Mensaje para la pantallita</h2>
+  <p class="sub">Aparece en la matriz LED en segundos</p>
+
+  <div class="btn-group">
+    <button class="btn-quick" onclick="setMsg('HOLA SAMARA')">👧 Samara</button>
+    <button class="btn-quick" onclick="setMsg('HOLA OWEN')">👦 Owen</button>
+    <button class="btn-quick" onclick="setMsg('LOS AMO')">❤️ Los amo</button>
+    <button class="btn-quick" onclick="setMsg('HORA DE COMER')">🍽️ Comer</button>
+    <button class="btn-quick" onclick="setMsg('HORA DE DORMIR')">😴 Dormir</button>
+    <button class="btn-quick" onclick="setMsg('BIENVENIDOS')">🏠 Casa</button>
+  </div>
+
+  <textarea id="msg" maxlength="40" placeholder="Escribe un mensaje..." oninput="onInput()"></textarea>
+  <div class="char-count"><span id="chars">0</span>/40</div>
+
+  <button class="btn-send" id="btnSend" onclick="enviar()">Enviar a la pantalla ✦</button>
+
+  <div class="status" id="status"></div>
+
+  <hr class="divider">
+  <div class="ultimo">Último mensaje: <span id="ultimo">—</span></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyDiqP5e_dP3VhHhR-SUaZWy25xboFTZzM8",
+    authDomain: "plccontrol-iprogo.firebaseapp.com",
+    databaseURL: "https://plccontrol-iprogo-default-rtdb.firebaseio.com",
+    projectId: "plccontrol-iprogo",
+    storageBucket: "plccontrol-iprogo.firebasestorage.app",
+    messagingSenderId: "229406808178",
+    appId: "1:229406808178:web:e4e1b17401213098424aeb"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.database();
+  const kidRef = db.ref('Kids/mensaje');
+
+  // Escucha estado de conexión
+  db.ref('.info/connected').on('value', snap => {
+    document.getElementById('dot').className = 'dot' + (snap.val() ? ' active' : '');
+  });
+
+  // Escucha último mensaje enviado
+  kidRef.on('value', snap => {
+    const data = snap.val();
+    if (data && data.texto) {
+      document.getElementById('ultimo').textContent = data.texto;
+      document.getElementById('preview').textContent = data.texto;
+    }
+  });
+
+  function setMsg(txt) {
+    document.getElementById('msg').value = txt;
+    onInput();
+  }
+
+  function onInput() {
+    const v = document.getElementById('msg').value;
+    document.getElementById('chars').textContent = v.length;
+    document.getElementById('preview').textContent = v || '· · · · · · · ·';
+  }
+
+  function enviar() {
+    const txt = document.getElementById('msg').value.trim().toUpperCase();
+    if (!txt) return;
+
+    const btn = document.getElementById('btnSend');
+    const status = document.getElementById('status');
+    btn.disabled = true;
+    status.className = 'status';
+    status.textContent = 'Enviando...';
+
+    kidRef.set({
+      texto: txt,
+      leido: false,
+      timestamp: Date.now()
+    }).then(() => {
+      status.className = 'status ok';
+      status.textContent = '✓ Mensaje enviado';
+      document.getElementById('msg').value = '';
+      document.getElementById('chars').textContent = '0';
+      setTimeout(() => {
+        status.textContent = '';
+        btn.disabled = false;
+      }, 3000);
+    }).catch(err => {
+      status.className = 'status err';
+      status.textContent = 'Error: ' + err.message;
+      btn.disabled = false;
+    });
+  }
+</script>
+</body>
+</html>
