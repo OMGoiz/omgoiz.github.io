@@ -507,9 +507,9 @@ const slotsRef = db.ref('Test/CitasSlots');
 // ============================================================
 // CONFIGURACIÓN — lo que cambia por cada cliente
 // ============================================================
-const CAPACITY = 15;              // Lugares por horario (ya era una sola constante, sin cambios)
-const ADMIN_USER = 'OMGoiz007';
-const ADMIN_PASS = 'Goso0721!';
+const CAPACITY = 2;              // Lugares por horario (ya era una sola constante, sin cambios)
+const ADMIN_USER = 'admin';
+const ADMIN_PASS = 'Admin1234.';
 
 const HORARIOS_AM = ['9:00 AM','9:30 AM','10:00 AM','10:30 AM','11:00 AM','11:30 AM','12:00 PM','12:30 PM'];
 const HORARIOS_PM = ['2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM','5:00 PM','5:30 PM','6:00 PM','6:30 PM'];
@@ -517,7 +517,7 @@ const HORARIOS_PM = ['2:00 PM','2:30 PM','3:00 PM','3:30 PM','4:00 PM','4:30 PM'
 const DIAS_ADELANTE = 30; // Hasta cuántos días en el futuro se puede agendar
 
 const DIAS_NOMBRES = ['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];
-const AVAILABLE_DAYS = ['viernes','sabado','domingo']; // Días que el negocio atiende — cambia esta lista por cliente
+const AVAILABLE_DAYS = ['lunes','martes','miercoles','jueves','viernes']; // Días que el negocio atiende — cambia esta lista por cliente
 const AVAILABLE_DAYS_IDX = AVAILABLE_DAYS.map(nombre => DIAS_NOMBRES.indexOf(nombre));
 
 // ============================================================
